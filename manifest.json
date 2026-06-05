@@ -1,12 +1,1 @@
-{
-  "name": "Brian Anime Mission Lab",
-  "short_name": "Anime Mission",
-  "start_url": "./index.html",
-  "display": "standalone",
-  "background_color": "#080b13",
-  "theme_color": "#0b1020",
-  "description": "Songshan field study app for character design, story worlds, and English output.",
-  "icons": [
-    {"src": "icon.svg", "sizes": "512x512", "type": "image/svg+xml"}
-  ]
-}
+{"name":"Brian Anime Mission Lab v4","short_name":"Anime Mission v4","start_url":"./index.html","display":"standalone","background_color":"#070a11","theme_color":"#0b1020","description":"Songshan field study with food rating, optional Alice, and pixel relic.","icons":[{"src":"icon.svg","sizes":"512x512","type":"image/svg+xml"}]}
