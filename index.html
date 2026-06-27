@@ -1,18 +1,720 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#0b1020"><link rel="manifest" href="manifest.json"><title>Anime Mission Lab v4</title><style>
-:root{--bg:#070a11;--p:#111827;--p2:#172033;--t:#f8fafc;--m:#a8b3c7;--l:#334155;--b:#38bdf8;--v:#a78bfa;--g:#86efac;--r:#fb7185;--y:#fbbf24;--i:#06080d}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(circle at 10% 0%,rgba(56,189,248,.24),transparent 28%),radial-gradient(circle at 90% 6%,rgba(251,113,133,.18),transparent 30%),linear-gradient(180deg,#070a11,#0b1020 45%,#05070c);color:var(--t);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;line-height:1.42}header{position:sticky;top:0;z-index:10;background:rgba(7,10,17,.95);backdrop-filter:blur(14px);border-bottom:1px solid rgba(148,163,184,.22)}.head{max-width:980px;margin:auto;padding:12px 14px}h1{font-size:1.2rem;margin:0}.sub{font-size:.86rem;color:var(--m);margin-top:3px}main{max-width:980px;margin:auto;padding:12px 12px 88px}.card,.hero{background:rgba(17,24,39,.94);border:1px solid rgba(148,163,184,.22);border-radius:20px;padding:14px;margin:12px 0;box-shadow:0 10px 30px rgba(0,0,0,.25)}.hero{background:linear-gradient(145deg,rgba(30,41,59,.9),rgba(15,23,42,.96));box-shadow:0 16px 40px rgba(0,0,0,.35)}h2{font-size:1.08rem;margin:0 0 8px;color:#dbeafe}h3{font-size:1rem;margin:14px 0 8px;color:#bae6fd}p{margin:8px 0}.prompt{border-left:4px solid var(--b);background:#0c1220;border-radius:13px;padding:11px;margin:10px 0}.purple{border-left-color:var(--v)}.food{border-left-color:var(--y)}.green{border-left-color:var(--g)}.red{border-left-color:var(--r)}.badges{display:flex;flex-wrap:wrap;gap:7px;margin-top:9px}.badge{font-size:.72rem;padding:6px 8px;border:1px solid rgba(148,163,184,.24);border-radius:999px;background:#172033}.progressBox{margin-top:10px;background:#0c1220;border:1px solid rgba(148,163,184,.22);border-radius:999px;overflow:hidden}.progress{height:10px;width:0;background:linear-gradient(90deg,var(--b),var(--v),var(--r),var(--y));transition:.2s}.progressTxt{font-size:.78rem;color:var(--m);margin-top:6px}.nav{display:grid;grid-template-columns:repeat(4,1fr);gap:7px;margin-top:12px}.nav a{text-align:center;text-decoration:none;color:#e2e8f0;border:1px solid rgba(148,163,184,.22);background:#111827;border-radius:13px;padding:9px 4px;font-size:.78rem}.grid{display:grid;grid-template-columns:1fr;gap:10px}.small{background:rgba(15,23,42,.92);border:1px solid rgba(148,163,184,.18);border-radius:16px;padding:11px;margin:8px 0}.opts{display:grid;grid-template-columns:1fr 1fr;gap:8px}.opt{border:1px solid rgba(148,163,184,.24);background:#121a2b;border-radius:14px;padding:10px;font-size:.88rem;text-align:left;color:#e5e7eb;min-height:44px}.opt.on{border-color:var(--b);box-shadow:0 0 0 3px rgba(56,189,248,.16);background:#14243a}label{display:block;margin:10px 0 5px;font-weight:760;font-size:.9rem;color:#e2e8f0}textarea,input,select{width:100%;background:var(--i);border:1px solid #334155;color:var(--t);border-radius:14px;padding:11px;font-size:1rem;outline:none}textarea{min-height:86px;resize:vertical}input,select{min-height:43px}textarea:focus,input:focus,select:focus{border-color:var(--b);box-shadow:0 0 0 3px rgba(56,189,248,.14)}.field{display:grid;grid-template-columns:1fr auto;gap:7px;align-items:end}.mic{min-width:48px;height:44px;border-radius:14px;border:1px solid #334155;background:#162033;color:#fff;font-size:1rem}.mic.on{background:#7f1d1d;border-color:#fb7185;animation:pulse 1.3s infinite}@keyframes pulse{50%{transform:scale(1.04)}}.wc{font-size:.75rem;color:var(--m);text-align:right;margin-top:3px}.rating{display:grid;grid-template-columns:repeat(5,1fr);gap:6px}.rating button{padding:9px 2px}.rating button.on{background:#92400e;border-color:#fbbf24}button{appearance:none;border:1px solid rgba(148,163,184,.24);border-radius:14px;background:#192235;color:#f8fafc;padding:10px 8px;font-weight:800;font-size:.86rem}.primary{border:0;background:linear-gradient(90deg,#2563eb,#7c3aed)}.good{background:#12301f;border-color:#2c6843;color:#d1fae5}.warn{background:#341c24;border-color:#7f1d1d;color:#fecdd3}.bottom{position:fixed;bottom:0;left:0;right:0;z-index:20;background:rgba(7,10,17,.95);backdrop-filter:blur(14px);border-top:1px solid rgba(148,163,184,.22);padding:10px 12px max(10px,env(safe-area-inset-bottom))}.bottomInner{max-width:980px;margin:auto;display:grid;grid-template-columns:repeat(4,1fr);gap:8px}.out{white-space:pre-wrap;display:none;background:#06080d;border:1px solid rgba(148,163,184,.22);border-radius:14px;padding:12px;margin-top:10px}.teacherOnly{display:none}.teacher .teacherOnly{display:block}.skipAlice .aliceModule{opacity:.55}canvas{width:100%;max-width:320px;image-rendering:pixelated;border:1px solid rgba(148,163,184,.3);border-radius:16px;background:#020617;display:block;margin:10px auto}.toast{position:fixed;left:50%;bottom:86px;transform:translateX(-50%);background:#e2e8f0;color:#020617;border-radius:999px;padding:9px 13px;font-size:.86rem;display:none;z-index:30}@media(min-width:720px){h1{font-size:1.75rem}.grid{grid-template-columns:1fr 1fr}.opts{grid-template-columns:repeat(4,1fr)}.nav{grid-template-columns:repeat(8,1fr)}.bottomInner{grid-template-columns:repeat(6,1fr)}}
-</style></head><body><header><div class="head"><h1>Anime Mission Lab v4</h1><div class="sub">ADVENTURE FESTA → Food/Café → Optional Alice → Anime Pitch → Pixel Relic</div><div class="badges"><span class="badge">Alice optional</span><span class="badge">Food rating</span><span class="badge">Voice notes</span><span class="badge">Pixel relic</span></div><div class="progressBox"><div class="progress" id="progress"></div></div><div class="progressTxt" id="progressTxt">Mission progress: 0%</div></div></header><main>
-<section class="hero" id="brief"><h2>Mission Brief</h2><div class="prompt"><b>Main question:</b> How do characters, places, food, and rules become a story you remember?</div><p>This works whether we do Alice or not. The core class is ADVENTURE FESTA + food/café reflection + final anime pitch. Alice is a bonus worldbuilding module if time allows.</p><div class="nav"><a href="#route">Route</a><a href="#warmup">Warm</a><a href="#scout">Scout</a><a href="#food">Food</a><a href="#battle">Battle</a><a href="#alice">Alice</a><a href="#relic">Relic</a><a href="#export">Export</a></div><div class="prompt green"><b>End result:</b> a short anime pitch, a food/mood rating, and a symbolic pixel relic generated from Brian's own choices.</div></section>
-<section class="card" id="route"><h2>0. Flexible Route</h2><div class="grid"><div class="small"><b>0:00 to 0:35</b><br>Ximen pickup → Blue Line → Songshan</div><div class="small"><b>0:35 to 1:45</b><br>ADVENTURE FESTA character scouting</div><div class="small"><b>1:45 to 2:35</b><br>Meal/café + voice journal</div><div class="small"><b>2:35 to 3:20</b><br>Option A: Alice<br>Option B: café pitch</div><div class="small"><b>3:20 to 4:00</b><br>Final pitch + relic + export</div></div><label>Will we do Alice today?</label><div class="opts" data-choice="aliceStatus"><button class="opt" onclick="choose('aliceStatus','Yes, Alice module completed',this);setAlice(false)">Yes</button><button class="opt" onclick="choose('aliceStatus','No, skipped Alice due to time',this);setAlice(true)">Skip</button><button class="opt" onclick="choose('aliceStatus','Maybe, decide after food',this)">Maybe</button><button class="opt" onclick="choose('aliceStatus','Replace Alice with café/story pitch',this);setAlice(true)">Replace</button></div><input type="hidden" id="aliceStatus" data-field></section>
-<section class="card" id="warmup"><h2>1. Warm-Up: Anime Worlds</h2><label>Choose today's story lens</label><div class="opts" data-choice="storyLens"><button class="opt" onclick="choose('storyLens','JJK lens: hidden danger and invisible rules',this)">JJK</button><button class="opt" onclick="choose('storyLens','MHA lens: power, school pressure, identity',this)">MHA</button><button class="opt" onclick="choose('storyLens','Kaiju lens: creature, scale, threat',this)">Kaiju</button><button class="opt" onclick="choose('storyLens','Alice lens: strange rules and identity test',this)">Alice</button></div><input type="hidden" id="storyLens" data-field data-required><label for="worldReal">What makes an anime world feel real?</label><div class="field"><textarea id="worldReal" data-field data-required></textarea><button class="mic" onclick="voice('worldReal',this)" type="button">🎙️</button></div><div class="wc" data-count="worldReal">0 words</div></section>
-<section class="card" id="scout"><h2>2. ADVENTURE FESTA: Character Scout</h2><div class="prompt purple"><b>Task:</b> Find 3 characters. Decide whether each can become animation, not just a collectible.</div><h3>Character 1</h3><label for="c1">Name or description</label><input id="c1" data-field data-required><label>Anime role</label><div class="opts" data-choice="c1role"><button class="opt" onclick="choose('c1role','Hero',this)">Hero</button><button class="opt" onclick="choose('c1role','Rival',this)">Rival</button><button class="opt" onclick="choose('c1role','Mentor',this)">Mentor</button><button class="opt" onclick="choose('c1role','Villain or curse',this)">Villain</button></div><input type="hidden" id="c1role" data-field><label for="c1evidence">Why could this work in animation? Use claim + evidence.</label><div class="field"><textarea id="c1evidence" data-field data-required></textarea><button class="mic" onclick="voice('c1evidence',this)" type="button">🎙️</button></div><h3>Character 2</h3><label for="c2">Name or description</label><input id="c2" data-field><label for="c2evidence">Why could this work in animation?</label><div class="field"><textarea id="c2evidence" data-field></textarea><button class="mic" onclick="voice('c2evidence',this)" type="button">🎙️</button></div><h3>Character 3</h3><label for="c3">Name or description</label><input id="c3" data-field><label for="c3evidence">Why could this work in animation?</label><div class="field"><textarea id="c3evidence" data-field></textarea><button class="mic" onclick="voice('c3evidence',this)" type="button">🎙️</button></div></section>
-<section class="card" id="food"><h2>3. Food/Café Scene Rating</h2><div class="prompt food"><b>Why food matters:</b> it affects mood, energy, conversation, and whether the place works as a creative workspace.</div><label for="foodPlace">Place name</label><input id="foodPlace" data-field data-required placeholder="CAMA, Eslite food court, café name..."><label for="foodItem">What did you eat or drink?</label><input id="foodItem" data-field><label>Food score</label><div class="rating" data-rating="foodScore"><button onclick="rate('foodScore',1,this)" type="button">1</button><button onclick="rate('foodScore',2,this)" type="button">2</button><button onclick="rate('foodScore',3,this)" type="button">3</button><button onclick="rate('foodScore',4,this)" type="button">4</button><button onclick="rate('foodScore',5,this)" type="button">5</button></div><input type="hidden" id="foodScore" data-field><label>Study/workspace score</label><div class="rating" data-rating="spaceScore"><button onclick="rate('spaceScore',1,this)" type="button">1</button><button onclick="rate('spaceScore',2,this)" type="button">2</button><button onclick="rate('spaceScore',3,this)" type="button">3</button><button onclick="rate('spaceScore',4,this)" type="button">4</button><button onclick="rate('spaceScore',5,this)" type="button">5</button></div><input type="hidden" id="spaceScore" data-field><label>Conversation/mood score</label><div class="rating" data-rating="moodScore"><button onclick="rate('moodScore',1,this)" type="button">1</button><button onclick="rate('moodScore',2,this)" type="button">2</button><button onclick="rate('moodScore',3,this)" type="button">3</button><button onclick="rate('moodScore',4,this)" type="button">4</button><button onclick="rate('moodScore',5,this)" type="button">5</button></div><input type="hidden" id="moodScore" data-field><label for="foodReview">Short food review: did this place help the class or hurt it?</label><div class="field"><textarea id="foodReview" data-field data-required></textarea><button class="mic" onclick="voice('foodReview',this)" type="button">🎙️</button></div><div class="wc" data-count="foodReview">0 words</div></section>
-<section class="card" id="battle"><h2>4. Character Battle Card</h2><label for="best">Best character from the event</label><input id="best" data-field data-required><label for="ability">Ability, curse technique, quirk, or special skill</label><div class="field"><textarea id="ability" data-field data-required placeholder="Invent an original rule. Do not copy JJK or MHA."></textarea><button class="mic" onclick="voice('ability',this)" type="button">🎙️</button></div><label for="weakness">Weakness or cost of using the ability</label><div class="field"><textarea id="weakness" data-field data-required></textarea><button class="mic" onclick="voice('weakness',this)" type="button">🎙️</button></div></section>
-<section class="card aliceModule" id="alice"><h2>5. Optional Alice / Replacement Worldbuilding</h2><div class="prompt red"><b>If we skip Alice:</b> answer these as invented story-world rules based on food, rain, and Songshan.</div><label>Worldbuilding source</label><div class="opts" data-choice="worldSource"><button class="opt" onclick="choose('worldSource','Alice exhibition',this)">Alice</button><button class="opt" onclick="choose('worldSource','ADVENTURE FESTA only',this)">Festa only</button><button class="opt" onclick="choose('worldSource','Food/café mood',this)">Food mood</button><button class="opt" onclick="choose('worldSource','Rainy Songshan setting',this)">Rainy Songshan</button></div><input type="hidden" id="worldSource" data-field><label for="strangeRule">What strange rule controls this world?</label><div class="field"><textarea id="strangeRule" data-field data-required></textarea><button class="mic" onclick="voice('strangeRule',this)" type="button">🎙️</button></div><label for="teenConnect">How does this connect to being 16, senior high school, or preparing for college?</label><div class="field"><textarea id="teenConnect" data-field data-required></textarea><button class="mic" onclick="voice('teenConnect',this)" type="button">🎙️</button></div></section>
-<section class="card" id="pitch"><h2>6. Final Anime Pitch</h2><p class="sub">Use one character idea, one food/mood detail, and one strange rule.</p><label for="title">Title</label><input id="title" data-field data-required><label for="hero">Main character</label><div class="field"><textarea id="hero" data-field data-required></textarea><button class="mic" onclick="voice('hero',this)" type="button">🎙️</button></div><label for="world">World and rules</label><div class="field"><textarea id="world" data-field data-required></textarea><button class="mic" onclick="voice('world',this)" type="button">🎙️</button></div><label for="conflict">Conflict</label><div class="field"><textarea id="conflict" data-field data-required></textarea><button class="mic" onclick="voice('conflict',this)" type="button">🎙️</button></div><label for="growth">What does the character learn?</label><div class="field"><textarea id="growth" data-field data-required></textarea><button class="mic" onclick="voice('growth',this)" type="button">🎙️</button></div><label for="finalPitch">Final pitch, 120 to 220 words</label><div class="field"><textarea id="finalPitch" data-field data-required></textarea><button class="mic" onclick="voice('finalPitch',this)" type="button">🎙️</button></div><div class="wc" data-count="finalPitch">0 words</div></section>
-<section class="card" id="relic"><h2>7. Mission Relic</h2><div class="prompt green"><b>Not AI art:</b> this is a rule-based pixel emblem generated from Brian's choices. It works like a mission badge or RPG item, not a replacement for an artist.</div><canvas id="relicCanvas" width="256" height="256"></canvas><div class="grid"><button class="primary" onclick="drawRelic()" type="button">Generate Pixel Relic</button><button class="good" onclick="downloadRelic()" type="button">Download PNG</button></div><label for="relicName">Name the relic</label><input id="relicName" data-field placeholder="Rain Rabbit Badge, Cursed Lunch Token..."><label for="relicMeaning">What does this relic represent from today?</label><div class="field"><textarea id="relicMeaning" data-field></textarea><button class="mic" onclick="voice('relicMeaning',this)" type="button">🎙️</button></div></section>
-<section class="card teacherOnly"><h2>Teacher Dashboard</h2><ul><li>If Alice is skipped, use Food + Rainy Songshan as the worldbuilding source.</li><li>Food rating turns lunch into evidence, not dead time.</li><li>The relic is a symbolic pixel badge from choices, not AI artwork.</li></ul></section>
-<section class="card" id="export"><h2>8. Export</h2><div class="grid"><button class="primary" onclick="copyAnswers()" type="button">Copy answers</button><button class="good" onclick="downloadAnswers()" type="button">Download TXT</button></div><div class="out" id="output"></div></section>
-</main><div class="bottom"><div class="bottomInner"><button onclick="saveNow();toast('Saved')" type="button">Save</button><button onclick="nextEmpty()" type="button">Next</button><button onclick="toggleTeacher()" type="button">Teacher</button><button class="primary" onclick="copyAnswers()" type="button">Copy</button></div></div><div class="toast" id="toast">Saved</div>
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#09090f">
+<title>Bryan Hidden Worlds Lab v5.1.1</title>
+<style>
+:root{
+  --bg:#07070b;--panel:#11121a;--panel2:#171923;--text:#f5f5f7;--muted:#a5adbd;
+  --line:#303341;--blue:#60a5fa;--violet:#a78bfa;--red:#fb7185;--gold:#fbbf24;--green:#86efac;
+  --shadow:0 18px 42px rgba(0,0,0,.35);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
+  line-height:1.45;background:
+  radial-gradient(circle at 12% 0%,rgba(251,113,133,.18),transparent 26%),
+  radial-gradient(circle at 88% 8%,rgba(167,139,250,.18),transparent 28%),
+  linear-gradient(180deg,#06060a 0%,#0d0e17 48%,#07070b 100%);
+}
+header{position:sticky;top:0;z-index:20;background:rgba(7,7,11,.94);backdrop-filter:blur(14px);border-bottom:1px solid rgba(255,255,255,.09)}
+.head{max-width:1050px;margin:auto;padding:12px 14px}
+h1{font-size:1.15rem;margin:0;letter-spacing:.2px}
+.sub{font-size:.84rem;color:var(--muted);margin-top:3px}
+main{max-width:1050px;margin:auto;padding:12px 12px 92px}
+.card,.hero{
+  background:rgba(17,18,26,.95);border:1px solid rgba(255,255,255,.1);
+  border-radius:22px;padding:15px;margin:12px 0;box-shadow:var(--shadow)
+}
+.hero{background:linear-gradient(145deg,rgba(30,32,46,.95),rgba(10,10,16,.98));}
+h2{font-size:1.08rem;margin:0 0 8px;color:#dbeafe}
+h3{font-size:1rem;margin:16px 0 8px;color:#c4b5fd}
+p{margin:8px 0}
+a{color:#93c5fd}
+.row{display:grid;grid-template-columns:1fr;gap:10px}
+@media(min-width:760px){.row.two{grid-template-columns:1fr 1fr}.row.three{grid-template-columns:repeat(3,1fr)}}
+.prompt{border-left:4px solid var(--violet);background:#0d0f18;border-radius:14px;padding:11px;margin:10px 0}
+.prompt.red{border-left-color:var(--red)}.prompt.gold{border-left-color:var(--gold)}.prompt.green{border-left-color:var(--green)}.prompt.blue{border-left-color:var(--blue)}
+.small{font-size:.86rem;color:var(--muted)}
+.badges{display:flex;flex-wrap:wrap;gap:7px;margin-top:9px}
+.badge{font-size:.75rem;padding:6px 8px;border:1px solid rgba(255,255,255,.12);border-radius:999px;background:#171923;color:#d9e2f2}
+label{display:block;font-size:.82rem;color:#d8dee9;margin:12px 0 5px}
+input,textarea,select{
+  width:100%;border:1px solid rgba(255,255,255,.15);border-radius:14px;background:#080a11;color:var(--text);
+  padding:11px;font:inherit;outline:none
+}
+textarea{min-height:92px;resize:vertical}
+input:focus,textarea:focus,select:focus{border-color:var(--blue);box-shadow:0 0 0 3px rgba(96,165,250,.15)}
+.choiceRow{display:flex;flex-wrap:wrap;gap:7px;margin:8px 0}
+.choice{
+  cursor:pointer;user-select:none;border:1px solid rgba(255,255,255,.13);background:#151722;color:#e8edf7;
+  padding:8px 10px;border-radius:999px;font-size:.84rem
+}
+.choice.active{background:linear-gradient(135deg,rgba(96,165,250,.32),rgba(167,139,250,.32));border-color:#93c5fd}
+.btns{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+button{
+  border:0;border-radius:14px;padding:10px 12px;background:#273149;color:white;font-weight:700;cursor:pointer;
+  box-shadow:0 8px 20px rgba(0,0,0,.22)
+}
+button.primary{background:linear-gradient(135deg,#2563eb,#7c3aed)}
+button.send{background:linear-gradient(135deg,#16a34a,#0284c7)}
+button.warn{background:linear-gradient(135deg,#dc2626,#9333ea)}
+button.ghost{background:#171923;border:1px solid rgba(255,255,255,.13)}
+button:disabled{opacity:.55;cursor:not-allowed}
+.status{font-size:.85rem;color:#bfdbfe;margin-top:8px;min-height:1.2em}
+.progressBox{margin-top:10px;background:#0b0d14;border:1px solid rgba(255,255,255,.1);border-radius:999px;height:11px;overflow:hidden}
+.progress{height:100%;width:0%;background:linear-gradient(90deg,var(--red),var(--violet),var(--blue),var(--green));transition:width .2s ease}
+.nav{display:flex;gap:7px;overflow:auto;padding:9px 0 2px}
+.nav a{white-space:nowrap;text-decoration:none;font-size:.79rem;color:#dbeafe;border:1px solid rgba(255,255,255,.12);border-radius:999px;padding:7px 9px;background:#12141d}
+.teacher{display:none;border:1px dashed rgba(251,191,36,.45);background:rgba(251,191,36,.08)}
+.teacher.on{display:block}
+.sectionFooter{border-top:1px solid rgba(255,255,255,.08);padding-top:10px;margin-top:12px}
+.mic{font-size:.78rem;padding:7px 9px;background:#1f2937;margin-top:6px}
+.relicWrap{display:flex;gap:14px;flex-wrap:wrap;align-items:center}
+canvas{image-rendering:pixelated;background:#0a0a0a;border:1px solid rgba(255,255,255,.15);border-radius:16px;max-width:180px;width:180px;height:180px}
+.footerbar{
+  position:fixed;bottom:0;left:0;right:0;z-index:25;background:rgba(7,7,11,.95);backdrop-filter:blur(14px);
+  border-top:1px solid rgba(255,255,255,.09);padding:8px 10px
+}
+.footerbar .inner{max-width:1050px;margin:auto;display:flex;gap:8px;justify-content:space-between;align-items:center}
+.footerbar button{padding:9px 10px;font-size:.82rem}
+.kv{display:grid;grid-template-columns:120px 1fr;gap:7px;font-size:.86rem;border-top:1px solid rgba(255,255,255,.08);padding-top:8px;margin-top:8px}
+pre{white-space:pre-wrap;background:#090b12;border:1px solid rgba(255,255,255,.12);border-radius:14px;padding:12px;max-height:280px;overflow:auto}
+</style>
+</head>
+<body>
+<header>
+  <div class="head">
+    <h1>Hidden Worlds Lab v5.1</h1>
+    <div class="sub">Bryan Class: Horror, Fate, One Piece, Black Clover, Sagas, and Hidden Worlds</div>
+    <div class="progressBox"><div id="progress" class="progress"></div></div>
+    <div class="nav">
+      <a href="#setup">Setup</a><a href="#warmup">Warm-Up</a><a href="#exhibit">Exhibit</a><a href="#monster">Monster</a><a href="#animeBridge">Anime Lens</a><a href="#saga">Sagas</a><a href="#food">Food</a><a href="#exercise">Exercise</a><a href="#final">Final</a><a href="#relic">Relic</a><a href="#export">Export</a>
+    </div>
+  </div>
+</header>
+
+<main>
+<section class="hero" id="setup">
+  <h2>Today’s Mission</h2>
+  <p><b>Theme:</b> Fear, Fate, and Hidden Worlds.</p>
+  <p>We are studying how ordinary places become strange, scary, heroic, mythic, or adventure-filled. Your job is to observe, explain, connect, and create without copying any series directly.</p>
+  <div class="badges">
+    <span class="badge">Junji Ito / horror lens</span><span class="badge">JJK hidden danger</span><span class="badge">Fate: destiny and heroic ideals</span><span class="badge">One Piece: dreams and freedom</span><span class="badge">Black Clover: willpower and training</span><span class="badge">Viking fate</span><span class="badge">Exercise trial</span><span class="badge">Final pitch</span>
+  </div>
+
+  <div class="row two">
+    <div>
+      <label>Student name</label>
+      <input data-key="studentName" value="Bryan">
+    </div>
+    <div>
+      <label>Class date</label>
+      <input data-key="classDate" type="date">
+    </div>
+  </div>
+  <label>Class title</label>
+  <input data-key="classTitle" value="Fear, Fate, and Hidden Worlds">
+
+  <div class="prompt gold">
+    <b>Teacher setup for online logging</b>
+    <p class="small">Paste the Google Apps Script Web App URL here after Clark creates it. Without this URL, the app still works locally and can export answers.</p>
+    <label>Google Apps Script Web App URL</label>
+    <input id="endpoint" placeholder="https://script.google.com/macros/s/.../exec">
+    <div class="btns">
+      <button class="ghost" onclick="saveEndpoint()">Save logging URL</button>
+      <button class="send" onclick="submitLog('setup')">Send setup test</button>
+      <button class="ghost" onclick="toggleTeacher()">Teacher mode</button>
+    </div>
+    <div id="endpointStatus" class="status"></div>
+  </div>
+
+  <div class="card teacher" data-teacher>
+    <h3>Clark’s conductor note</h3>
+    <p>Do not wait for Bryan’s pre-class answers. Use defaults: anime, JJK/MHA, character design, horror curiosity, visual worldbuilding, and senior-high identity pressure.</p>
+    <p><b>Core push:</b> “Not just cool. What is the evidence? What story could this become?”</p>
+  </div>
+</section>
+
+<section class="card" id="warmup" data-section="warmup">
+  <h2>1. Warm-Up: Your Hidden World Lens</h2>
+  <div class="prompt blue">Choose the lens that fits you today. This helps the app shape your final story.</div>
+  <label>Which story lens do you want to use most today?</label>
+  <div class="choiceRow" data-choice="storyLens">
+    <span class="choice">JJK: hidden danger</span><span class="choice">MHA: power and responsibility</span><span class="choice">Fate: ideals, destiny, heroic spirits</span><span class="choice">One Piece: dreams, freedom, crew</span><span class="choice">Black Clover: no talent, willpower, rivals</span><span class="choice">Horror: ordinary life turns wrong</span><span class="choice">Viking saga: fate and courage</span><span class="choice">Alice: strange rules</span>
+  </div>
+  <label>What makes a fictional world feel real?</label>
+  <textarea data-key="realWorld" placeholder="Rules, history, danger, school pressure, society, food, places, consequences..."></textarea>
+  <button class="mic" onclick="voiceTo('realWorld')">🎙 Speak this answer</button>
+
+  <label>What kind of fear is most interesting to you?</label>
+  <div class="choiceRow" data-choice="fearType">
+    <span class="choice">Mystery</span><span class="choice">Body horror</span><span class="choice">Psychological pressure</span><span class="choice">Social fear</span><span class="choice">Monsters</span><span class="choice">Fate</span>
+  </div>
+
+  <label>What type of horror should we avoid today?</label>
+  <textarea data-key="horrorBoundary" placeholder="Example: too much gore, hopeless endings, jump scares, body horror, etc."></textarea>
+  <button class="mic" onclick="voiceTo('horrorBoundary')">🎙 Speak this answer</button>
+
+  <label>Which Bryan anime lens should shape today’s final output?</label>
+  <div class="choiceRow" data-choice="bryanSeriesLens">
+    <span class="choice">Fate: What ideal is worth fighting for?</span>
+    <span class="choice">One Piece: What dream creates the journey?</span>
+    <span class="choice">Black Clover: How does effort beat limits?</span>
+    <span class="choice">JJK: What hidden danger changes daily life?</span>
+    <span class="choice">MHA: What responsibility comes with power?</span>
+  </div>
+
+  <label>Why did you choose that lens?</label>
+  <textarea data-key="seriesLensReason" placeholder="Example: I chose One Piece because the dream matters more than the fight."></textarea>
+  <button class="mic" onclick="voiceTo('seriesLensReason')">🎙 Speak this answer</button>
+
+
+  <div class="card teacher" data-teacher>
+    <h3>Ask Bryan</h3>
+    <p>What is the difference between “scary” and “interesting”?</p>
+    <p>What does JJK do that makes invisible danger feel real?</p>
+    <p>What kind of fear should a good story not overuse?</p>
+  </div>
+  <div class="sectionFooter">
+    <button class="send" onclick="submitLog('warmup')">Send Warm-Up to Clark</button>
+    <span id="status-warmup" class="status"></span>
+  </div>
+</section>
+
+<section class="card" id="exhibit" data-section="exhibit">
+  <h2>2. Exhibit Mission: Ordinary Life Turns Wrong</h2>
+  <p class="small">Use this at Songshan or any exhibit that deals with horror, strange worlds, design, or atmosphere.</p>
+
+  <label>What did you notice first in the exhibit?</label>
+  <textarea data-key="exhibitFirstNotice"></textarea>
+  <button class="mic" onclick="voiceTo('exhibitFirstNotice')">🎙 Speak this answer</button>
+
+  <label>Pick one work/image/scene. What normal thing becomes wrong?</label>
+  <textarea data-key="normalWrong" placeholder="Example: a town, a face, a street, a body, a family, a school rule, a sound..."></textarea>
+  <button class="mic" onclick="voiceTo('normalWrong')">🎙 Speak this answer</button>
+
+  <label>What visual evidence creates the mood?</label>
+  <textarea data-key="visualEvidence" placeholder="Shape, line, shadow, repetition, expression, body position, empty space..."></textarea>
+  <button class="mic" onclick="voiceTo('visualEvidence')">🎙 Speak this answer</button>
+
+  <label>How would you describe the mood?</label>
+  <div class="choiceRow" data-choice="mood">
+    <span class="choice">Creepy</span><span class="choice">Sad</span><span class="choice">Unstable</span><span class="choice">Beautiful but wrong</span><span class="choice">Hopeless</span><span class="choice">Mysterious</span><span class="choice">Funny-dark</span>
+  </div>
+
+  <label>Claim → Evidence → Meaning</label>
+  <textarea data-key="claimEvidenceMeaning" placeholder="I think this works as horror because... The evidence is... This makes the viewer feel..."></textarea>
+  <button class="mic" onclick="voiceTo('claimEvidenceMeaning')">🎙 Speak this answer</button>
+
+  <div class="card teacher" data-teacher>
+    <h3>If he says “cool”</h3>
+    <p>Cool how? Shape? Mood? Story? Fear? Character design?</p>
+    <p>What does the artist control: your eyes, your body, your imagination, or your expectations?</p>
+  </div>
+  <div class="sectionFooter">
+    <button class="send" onclick="submitLog('exhibit')">Send Exhibit Mission to Clark</button>
+    <span id="status-exhibit" class="status"></span>
+  </div>
+</section>
+
+<section class="card" id="monster" data-section="monster">
+  <h2>3. Character / Monster Profile</h2>
+  <div class="prompt red">A strong monster is not just scary. It has a rule, a limit, and a meaning.</div>
+
+  <label>Name your character, curse, monster, or strange force.</label>
+  <input data-key="monsterName" placeholder="Example: The Spiral Clerk, The Rain-Eater, The Door Without a Room">
+
+  <label>What fear does it represent?</label>
+  <textarea data-key="monsterFear"></textarea>
+  <button class="mic" onclick="voiceTo('monsterFear')">🎙 Speak this answer</button>
+
+  <label>What rule controls it?</label>
+  <textarea data-key="monsterRule" placeholder="Example: It only appears when people lie. It grows when people ignore it. It follows unfinished messages."></textarea>
+  <button class="mic" onclick="voiceTo('monsterRule')">🎙 Speak this answer</button>
+
+  <label>What power does it have?</label>
+  <textarea data-key="monsterPower"></textarea>
+  <button class="mic" onclick="voiceTo('monsterPower')">🎙 Speak this answer</button>
+
+  <label>What weakness or cost makes it more interesting?</label>
+  <textarea data-key="monsterWeakness"></textarea>
+  <button class="mic" onclick="voiceTo('monsterWeakness')">🎙 Speak this answer</button>
+
+  <label>What role would it play?</label>
+  <div class="choiceRow" data-choice="monsterRole">
+    <span class="choice">Hero</span><span class="choice">Rival</span><span class="choice">Villain</span><span class="choice">Mentor</span><span class="choice">Cursed object</span><span class="choice">World itself</span>
+  </div>
+
+  <div class="card teacher" data-teacher>
+    <h3>Push for stronger answers</h3>
+    <p>What does this monster punish?</p>
+    <p>What does it want?</p>
+    <p>What would make the audience pity it?</p>
+  </div>
+  <div class="sectionFooter">
+    <button class="send" onclick="submitLog('monster')">Send Monster Profile to Clark</button>
+    <span id="status-monster" class="status"></span>
+  </div>
+</section>
+
+
+<section class="card" id="animeBridge" data-section="animeBridge">
+  <h2>4. Bryan Anime Lens: Fate / One Piece / Black Clover</h2>
+  <div class="prompt blue">Use these series as thinking tools, not as something to copy. The goal is to understand story engines.</div>
+
+  <label>Fate lens: What ideal, wish, or destiny would your character fight for?</label>
+  <textarea data-key="fateIdeal" placeholder="Example: They fight for freedom, revenge, family, truth, recognition, or a second chance."></textarea>
+  <button class="mic" onclick="voiceTo('fateIdeal')">🎙 Speak this answer</button>
+
+  <label>One Piece lens: What dream would pull your character into a long journey?</label>
+  <textarea data-key="onePieceDream" placeholder="Example: To find a lost city, protect a crew, become the strongest, or prove a forgotten story is true."></textarea>
+  <button class="mic" onclick="voiceTo('onePieceDream')">🎙 Speak this answer</button>
+
+  <label>Black Clover lens: What limit, weakness, or unfair starting point must your character overcome?</label>
+  <textarea data-key="blackCloverLimit" placeholder="Example: No natural power, fear, poverty, social rejection, weak body, bad reputation, or self-doubt."></textarea>
+  <button class="mic" onclick="voiceTo('blackCloverLimit')">🎙 Speak this answer</button>
+
+  <label>Which story engine is strongest for today?</label>
+  <div class="choiceRow" data-choice="storyEngine">
+    <span class="choice">Destiny vs choice</span>
+    <span class="choice">Dream vs obstacle</span>
+    <span class="choice">Weakness vs training</span>
+    <span class="choice">Hidden danger vs normal life</span>
+    <span class="choice">Power vs responsibility</span>
+  </div>
+
+  <div class="card teacher" data-teacher>
+    <h3>Clark’s bridge questions</h3>
+    <p><b>Fate:</b> Is destiny something the character accepts, rejects, or rewrites?</p>
+    <p><b>One Piece:</b> What dream is big enough to justify the whole journey?</p>
+    <p><b>Black Clover:</b> What does the character lack, and what replaces talent?</p>
+  </div>
+
+  <div class="sectionFooter">
+    <button class="send" onclick="submitLog('animeBridge')">Send Anime Lens to Clark</button>
+    <span id="status-animeBridge" class="status"></span>
+  </div>
+</section>
+
+<section class="card" id="saga" data-section="saga">
+  <h2>5. CuriosityStream / Vikings / Saga Block</h2>
+  <p class="small">Use this if you watch a short video, read a saga excerpt, or discuss Norse/Viking themes.</p>
+
+  <label>What is one Viking/saga idea from today?</label>
+  <div class="choiceRow" data-choice="sagaIdea">
+    <span class="choice">Fate</span><span class="choice">Honor</span><span class="choice">Death</span><span class="choice">Revenge</span><span class="choice">Courage</span><span class="choice">Reputation</span><span class="choice">Gods/monsters</span>
+  </div>
+
+  <label>How is Viking fear different from modern horror?</label>
+  <textarea data-key="vikingModernFear"></textarea>
+  <button class="mic" onclick="voiceTo('vikingModernFear')">🎙 Speak this answer</button>
+
+  <label>Write one saga-style sentence about your character or monster.</label>
+  <textarea data-key="sagaSentence" placeholder="Example: In the rain-dark city, he carried the curse like a second shadow."></textarea>
+  <button class="mic" onclick="voiceTo('sagaSentence')">🎙 Speak this answer</button>
+
+  <label>What does courage mean when the ending may already be decided?</label>
+  <textarea data-key="courageFate"></textarea>
+  <button class="mic" onclick="voiceTo('courageFate')">🎙 Speak this answer</button>
+
+  <div class="card teacher" data-teacher>
+    <h3>Clark’s bridge</h3>
+    <p>Junji Ito: fear spreads through ordinary life.</p>
+    <p>Sagas: fate pressures people to act anyway.</p>
+    <p>Ask: Is a hero still a hero if they are scared?</p>
+  </div>
+  <div class="sectionFooter">
+    <button class="send" onclick="submitLog('saga')">Send Saga Block to Clark</button>
+    <span id="status-saga" class="status"></span>
+  </div>
+</section>
+
+<section class="card" id="food" data-section="food">
+  <h2>6. Food / Café Mood Rating</h2>
+  <div class="prompt gold">Food is not a break from class. It is setting, mood, energy, and conversation.</div>
+
+  <label>Where did we eat or sit?</label>
+  <input data-key="foodPlace">
+
+  <label>What did you order?</label>
+  <input data-key="foodOrder">
+
+  <div class="row three">
+    <div><label>Food score /5</label><select data-key="foodScore"><option></option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option></select></div>
+    <div><label>Workspace score /5</label><select data-key="workspaceScore"><option></option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option></select></div>
+    <div><label>Mood score /5</label><select data-key="foodMoodScore"><option></option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option></select></div>
+  </div>
+
+  <label>If this place appeared in an anime, what scene would happen here?</label>
+  <textarea data-key="animeFoodScene"></textarea>
+  <button class="mic" onclick="voiceTo('animeFoodScene')">🎙 Speak this answer</button>
+
+  <label>Short review in English</label>
+  <textarea data-key="foodReview" placeholder="The food was... The place felt... It helped/did not help the class because..."></textarea>
+  <button class="mic" onclick="voiceTo('foodReview')">🎙 Speak this answer</button>
+
+  <div class="sectionFooter">
+    <button class="send" onclick="submitLog('food')">Send Food/Café Rating to Clark</button>
+    <span id="status-food" class="status"></span>
+  </div>
+</section>
+
+<section class="card" id="exercise" data-section="exercise">
+  <h2>7. Exercise Trial</h2>
+  <div class="prompt green">The body section connects discipline, stress, energy, and focus.</div>
+
+  <label>What did we do?</label>
+  <div class="choiceRow" data-choice="exerciseType">
+    <span class="choice">Walk</span><span class="choice">Jog intervals</span><span class="choice">YouBike</span><span class="choice">Mobility</span><span class="choice">Stairs</span><span class="choice">Mixed</span>
+  </div>
+
+  <label>Energy before exercise /5</label>
+  <select data-key="energyBefore"><option></option><option>1 tired</option><option>2 low</option><option>3 okay</option><option>4 good</option><option>5 strong</option></select>
+
+  <label>Energy after exercise /5</label>
+  <select data-key="energyAfter"><option></option><option>1 tired</option><option>2 low</option><option>3 okay</option><option>4 good</option><option>5 strong</option></select>
+
+  <label>What did exercise change: body, mood, attention, confidence, or stress?</label>
+  <textarea data-key="exerciseChange"></textarea>
+  <button class="mic" onclick="voiceTo('exerciseChange')">🎙 Speak this answer</button>
+
+  <label>How is exercise like a training arc?</label>
+  <textarea data-key="trainingArc"></textarea>
+  <button class="mic" onclick="voiceTo('trainingArc')">🎙 Speak this answer</button>
+
+  <div class="card teacher" data-teacher>
+    <h3>Safety rule</h3>
+    <p>If it is very hot: lower intensity. Walking, shade, water, and mobility are enough.</p>
+  </div>
+  <div class="sectionFooter">
+    <button class="send" onclick="submitLog('exercise')">Send Exercise Trial to Clark</button>
+    <span id="status-exercise" class="status"></span>
+  </div>
+</section>
+
+<section class="card" id="final" data-section="final">
+  <h2>8. Final Output: Hidden World Pitch</h2>
+  <p>Combine today’s exhibit, saga idea, food/café mood, and exercise trial into one story concept.</p>
+
+  <label>Title</label>
+  <input data-key="pitchTitle" placeholder="Example: The City That Remembers Rain">
+
+  <label>Main character</label>
+  <input data-key="mainCharacter">
+
+  <label>What do they want?</label>
+  <textarea data-key="characterWants"></textarea>
+  <button class="mic" onclick="voiceTo('characterWants')">🎙 Speak this answer</button>
+
+  <label>What hidden rule controls the world?</label>
+  <textarea data-key="worldRule"></textarea>
+  <button class="mic" onclick="voiceTo('worldRule')">🎙 Speak this answer</button>
+
+  <label>Main conflict</label>
+  <textarea data-key="mainConflict"></textarea>
+  <button class="mic" onclick="voiceTo('mainConflict')">🎙 Speak this answer</button>
+
+  <label>What does the character learn?</label>
+  <textarea data-key="lessonLearned"></textarea>
+  <button class="mic" onclick="voiceTo('lessonLearned')">🎙 Speak this answer</button>
+
+  <label>Connect your pitch to Bryan’s anime lens</label>
+  <textarea data-key="animeLensConnection" placeholder="Example: This is like One Piece because the dream drives the journey, but the horror style makes the world feel dangerous."></textarea>
+  <button class="mic" onclick="voiceTo('animeLensConnection')">🎙 Speak this answer</button>
+
+
+  <label>Why would someone watch episode two?</label>
+  <textarea data-key="episodeTwoHook"></textarea>
+  <button class="mic" onclick="voiceTo('episodeTwoHook')">🎙 Speak this answer</button>
+
+  <div class="card teacher" data-teacher>
+    <h3>Final structure</h3>
+    <p>One normal world + one wrong rule + one character under pressure + one cost + one reason to keep watching.</p>
+  </div>
+  <div class="sectionFooter">
+    <button class="send" onclick="submitLog('final')">Send Final Pitch to Clark</button>
+    <span id="status-final" class="status"></span>
+  </div>
+</section>
+
+<section class="card" id="relic" data-section="relic">
+  <h2>9. Mission Relic</h2>
+  <p class="small">This is a symbolic RPG-style badge generated from choices. It is not AI art replacing artists.</p>
+
+  <label>Relic name</label>
+  <input data-key="relicName" placeholder="Example: The Rain-Fate Emblem">
+
+  <label>What memory from today should the relic preserve?</label>
+  <textarea data-key="relicMeaning"></textarea>
+  <button class="mic" onclick="voiceTo('relicMeaning')">🎙 Speak this answer</button>
+
+  <div class="relicWrap">
+    <canvas id="relicCanvas" width="96" height="96"></canvas>
+    <div>
+      <div class="btns">
+        <button class="primary" onclick="drawRelic()">Generate Mission Relic</button>
+        <button class="ghost" onclick="downloadRelic()">Download PNG</button>
+      </div>
+      <div class="small">The relic changes based on lens, mood, fear, role, food score, and final pitch completion.</div>
+    </div>
+  </div>
+
+  <div class="sectionFooter">
+    <button class="send" onclick="submitLog('relic')">Send Relic Notes to Clark</button>
+    <span id="status-relic" class="status"></span>
+  </div>
+</section>
+
+<section class="card" id="export">
+  <h2>Export / Full Class Log</h2>
+  <p>Use this as a fallback if online logging fails, or at the end of class for a complete record.</p>
+  <div class="btns">
+    <button class="primary" onclick="buildExport()">Build export text</button>
+    <button class="ghost" onclick="copyExport()">Copy export</button>
+    <button class="send" onclick="submitLog('full')">Send Full Class Log to Clark</button>
+    <button class="warn" onclick="clearAll()">Clear this device</button>
+  </div>
+  <div id="status-full" class="status"></div>
+  <pre id="exportText"></pre>
+</section>
+</main>
+
+<div class="footerbar">
+  <div class="inner">
+    <button class="ghost" onclick="toggleTeacher()">Teacher</button>
+    <span class="small" id="saveStatus">Saved locally</span>
+    <button class="send" onclick="submitLog('checkpoint')">Send Progress</button>
+  </div>
+</div>
+
 <script>
-let recog=null,activeMic=null;const fields=[...document.querySelectorAll('[data-field]')],labels={};fields.forEach(f=>{let lab=document.querySelector('label[for="'+f.id+'"]');labels[f.id]=lab?lab.innerText.trim():f.id});function val(f){return f.type==='checkbox'?(f.checked?'Yes':''):(f.value||'').trim()}function req(){return fields.filter(f=>f.hasAttribute('data-required'))}function toast(m){let t=document.getElementById('toast');t.innerText=m;t.style.display='block';setTimeout(()=>t.style.display='none',1400)}function saveNow(){let d={};fields.forEach(f=>d[f.id]=f.type==='checkbox'?f.checked:f.value);localStorage.setItem('anime_mission_lab_v4',JSON.stringify(d));progress();counts()}function load(){try{let d=JSON.parse(localStorage.getItem('anime_mission_lab_v4')||'{}');fields.forEach(f=>{if(d[f.id]!==undefined){if(f.type==='checkbox')f.checked=!!d[f.id];else f.value=d[f.id]}})}catch(e){}restoreChoices();restoreRatings();progress();counts();drawRelic()}function progress(){let r=req(),filled=r.filter(f=>val(f).length>0).length,pct=r.length?Math.round(filled/r.length*100):0;document.getElementById('progress').style.width=pct+'%';document.getElementById('progressTxt').innerText='Mission progress: '+pct+'% · '+filled+' of '+r.length+' required fields'}function choose(id,value,btn){document.getElementById(id).value=value;document.querySelectorAll('[data-choice="'+id+'"] .opt').forEach(b=>b.classList.remove('on'));btn.classList.add('on');saveNow();drawRelic()}function restoreChoices(){document.querySelectorAll('[data-choice]').forEach(g=>{let id=g.getAttribute('data-choice'),v=document.getElementById(id)?.value;if(!v)return;g.querySelectorAll('.opt').forEach(b=>{let k=b.textContent.trim().toLowerCase().split(' ')[0];if(v.toLowerCase().includes(k))b.classList.add('on')})})}function rate(id,value,btn){document.getElementById(id).value=value;document.querySelectorAll('[data-rating="'+id+'"] button').forEach(b=>b.classList.remove('on'));btn.classList.add('on');saveNow();drawRelic()}function restoreRatings(){document.querySelectorAll('[data-rating]').forEach(g=>{let id=g.getAttribute('data-rating'),v=document.getElementById(id)?.value;if(!v)return;g.querySelectorAll('button').forEach(b=>{if(b.innerText===v)b.classList.add('on')})})}function setAlice(skip){document.body.classList.toggle('skipAlice',skip);if(skip)document.getElementById('worldSource').value=document.getElementById('worldSource').value||'ADVENTURE FESTA only';saveNow()}function wc(s){return(s.trim().match(/\b[\w'-]+\b/g)||[]).length}function counts(){document.querySelectorAll('[data-count]').forEach(c=>{let id=c.getAttribute('data-count');c.innerText=wc(document.getElementById(id).value)+' words'})}fields.forEach(f=>f.addEventListener('input',()=>{saveNow();drawRelic()}));function voice(id,btn){const SR=window.SpeechRecognition||window.webkitSpeechRecognition;if(!SR){toast('Use keyboard mic');document.getElementById(id).focus();return}if(recog){try{recog.stop()}catch(e){}recog=null;if(activeMic)activeMic.classList.remove('on');if(activeMic===btn){activeMic=null;return}}let target=document.getElementById(id);recog=new SR();recog.lang='en-US';recog.interimResults=true;recog.continuous=false;activeMic=btn;btn.classList.add('on');toast('Listening...');let finalText='';recog.onresult=e=>{let interim='';for(let i=e.resultIndex;i<e.results.length;i++){let txt=e.results[i][0].transcript;if(e.results[i].isFinal)finalText+=txt+' ';else interim+=txt}target.value=(target.value.replace(/\s*\[listening.*?\]\s*$/,'')+' '+finalText+(interim?' [listening: '+interim+']':'')).trim();saveNow()};recog.onerror=()=>{toast('Voice failed. Use keyboard mic.');btn.classList.remove('on')};recog.onend=()=>{target.value=target.value.replace(/\s*\[listening.*?\]\s*$/,'').trim();saveNow();btn.classList.remove('on');activeMic=null;recog=null};try{recog.start()}catch(e){toast('Voice could not start');btn.classList.remove('on')}}function palette(){let lens=document.getElementById('storyLens').value;if(lens.includes('JJK'))return['#111827','#6d28d9','#38bdf8','#f8fafc'];if(lens.includes('MHA'))return['#0f172a','#22c55e','#f97316','#f8fafc'];if(lens.includes('Kaiju'))return['#111827','#16a34a','#ef4444','#f8fafc'];return['#111827','#a78bfa','#fbbf24','#f8fafc']}function drawRelic(){let cv=document.getElementById('relicCanvas'),ctx=cv.getContext('2d'),[bg,a,b,w]=palette();ctx.imageSmoothingEnabled=false;ctx.fillStyle=bg;ctx.fillRect(0,0,256,256);let food=parseInt(document.getElementById('foodScore').value||'3'),space=parseInt(document.getElementById('spaceScore').value||'3'),mood=parseInt(document.getElementById('moodScore').value||'3');ctx.fillStyle=a;for(let y=0;y<16;y++)for(let x=0;x<16;x++)if((x+y+food)%4===0)ctx.fillRect(x*16,y*16,16,16);ctx.fillStyle=b;let role=document.getElementById('c1role').value;if(role.includes('Rival')){ctx.fillRect(112,32,32,192);ctx.fillRect(64,80,128,32);ctx.fillRect(64,144,128,32)}else if(role.includes('Villain')){ctx.beginPath();ctx.moveTo(128,32);ctx.lineTo(176,96);ctx.lineTo(144,96);ctx.lineTo(190,224);ctx.lineTo(96,144);ctx.lineTo(128,144);ctx.lineTo(70,32);ctx.closePath();ctx.fill()}else{ctx.fillRect(96,48,64,32);ctx.fillRect(80,80,96,96);ctx.fillRect(64,176,128,32);ctx.fillRect(96,208,64,16)}ctx.fillStyle=w;ctx.fillRect(96,96,24,24);ctx.fillRect(136,96,24,24);ctx.fillStyle=bg;ctx.fillRect(104,104,8,8);ctx.fillRect(144,104,8,8);ctx.strokeStyle=space>=4?'#86efac':'#fb7185';ctx.lineWidth=8;ctx.strokeRect(44,44,168,168);ctx.strokeStyle=mood>=4?'#fbbf24':'#94a3b8';ctx.beginPath();ctx.moveTo(70,196);ctx.lineTo(186,196);ctx.stroke();ctx.fillStyle=w;ctx.font='16px monospace';ctx.fillText('MISSION',88,236)}function downloadRelic(){drawRelic();let a=document.createElement('a');a.href=document.getElementById('relicCanvas').toDataURL('image/png');a.download='brian_mission_relic.png';a.click()}function buildOutput(show=true){let text='Anime Mission Lab v4\nADVENTURE FESTA + Food/Cafe + Optional Alice\n\n';fields.forEach(f=>{let v=val(f);if(v)text+=labels[f.id]+'\n'+v+'\n\n'});let out=document.getElementById('output');out.innerText=text;if(show)out.style.display='block';return text}async function copyAnswers(){let text=buildOutput(true);try{await navigator.clipboard.writeText(text);toast('Copied')}catch(e){toast('Copy failed. Use preview.')}}function downloadAnswers(){let text=buildOutput(true),blob=new Blob([text],{type:'text/plain;charset=utf-8'}),url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download='brian_anime_mission_v4_answers.txt';a.click();URL.revokeObjectURL(url)}function nextEmpty(){let e=req().find(f=>val(f).length===0);if(e){e.scrollIntoView({behavior:'smooth',block:'center'});e.focus()}else document.getElementById('export').scrollIntoView({behavior:'smooth'})}function toggleTeacher(){document.body.classList.toggle('teacher');toast(document.body.classList.contains('teacher')?'Teacher mode on':'Teacher mode off')}if('serviceWorker'in navigator)navigator.serviceWorker.register('./service-worker.js').catch(()=>{});load();
-</script></body></html>
+const APP_VERSION = "v5.1";
+const STORE_KEY = "bryan_hidden_worlds_v5_answers";
+const ENDPOINT_KEY = "bryan_hidden_worlds_endpoint";
+const SUBMIT_KEY = "bryan_hidden_worlds_v5_submits";
+const CLASS_DEFAULT_DATE = (() => {
+  const d = new Date();
+  d.setDate(d.getDate()+1);
+  return d.toISOString().slice(0,10);
+})();
+
+const sectionKeys = {
+  setup:["studentName","classDate","classTitle"],
+  warmup:["storyLens","realWorld","fearType","horrorBoundary","bryanSeriesLens","seriesLensReason"],
+  exhibit:["exhibitFirstNotice","normalWrong","visualEvidence","mood","claimEvidenceMeaning"],
+  monster:["monsterName","monsterFear","monsterRule","monsterPower","monsterWeakness","monsterRole"],
+  animeBridge:["fateIdeal","onePieceDream","blackCloverLimit","storyEngine"],
+  saga:["sagaIdea","vikingModernFear","sagaSentence","courageFate"],
+  food:["foodPlace","foodOrder","foodScore","workspaceScore","foodMoodScore","animeFoodScene","foodReview"],
+  exercise:["exerciseType","energyBefore","energyAfter","exerciseChange","trainingArc"],
+  final:["pitchTitle","mainCharacter","characterWants","worldRule","mainConflict","lessonLearned","animeLensConnection","episodeTwoHook"],
+  relic:["relicName","relicMeaning"]
+};
+
+function load(){
+  const raw = localStorage.getItem(STORE_KEY);
+  const data = raw ? JSON.parse(raw) : {};
+  if(!data.classDate) data.classDate = CLASS_DEFAULT_DATE;
+  document.querySelectorAll("[data-key]").forEach(el=>{
+    const k=el.dataset.key;
+    if(data[k] !== undefined) el.value = data[k];
+  });
+  document.querySelectorAll("[data-choice]").forEach(row=>{
+    const key=row.dataset.choice;
+    const val=data[key];
+    row.querySelectorAll(".choice").forEach(ch=>{
+      ch.classList.toggle("active", ch.textContent === val);
+    });
+  });
+  const ep=localStorage.getItem(ENDPOINT_KEY)||"";
+  document.getElementById("endpoint").value=ep;
+  updateProgress();
+  drawRelic();
+}
+function collect(){
+  const data={};
+  document.querySelectorAll("[data-key]").forEach(el=>data[el.dataset.key]=el.value||"");
+  document.querySelectorAll("[data-choice]").forEach(row=>{
+    const active=row.querySelector(".choice.active");
+    data[row.dataset.choice]=active?active.textContent:"";
+  });
+  return data;
+}
+function save(){
+  localStorage.setItem(STORE_KEY, JSON.stringify(collect()));
+  document.getElementById("saveStatus").textContent="Saved locally " + new Date().toLocaleTimeString([], {hour:"2-digit", minute:"2-digit"});
+  updateProgress();
+}
+function updateProgress(){
+  const d=collect();
+  const keys=Object.values(sectionKeys).flat();
+  let filled=0;
+  keys.forEach(k=>{ if((d[k]||"").trim()) filled++; });
+  document.getElementById("progress").style.width=Math.round((filled/keys.length)*100)+"%";
+}
+document.addEventListener("input", e=>{ if(e.target.matches("[data-key]")) save(); });
+document.addEventListener("click", e=>{
+  if(e.target.classList.contains("choice")){
+    const row=e.target.closest("[data-choice]");
+    row.querySelectorAll(".choice").forEach(c=>c.classList.remove("active"));
+    e.target.classList.add("active");
+    save(); drawRelic();
+  }
+});
+
+function saveEndpoint(){
+  const url=document.getElementById("endpoint").value.trim();
+  localStorage.setItem(ENDPOINT_KEY,url);
+  document.getElementById("endpointStatus").textContent = url ? "Logging URL saved on this device." : "Logging URL cleared.";
+}
+function sectionData(section){
+  const all=collect();
+  if(section === "full" || section === "checkpoint"){
+    return all;
+  }
+  const keys=sectionKeys[section] || [];
+  const out={};
+  keys.forEach(k=>out[k]=all[k]||"");
+  return out;
+}
+function hasEndpoint(){
+  return (localStorage.getItem(ENDPOINT_KEY)||"").trim();
+}
+async function submitLog(section){
+  save();
+  const endpoint=hasEndpoint();
+  const status=document.getElementById("status-"+section) || document.getElementById("status-full") || document.getElementById("endpointStatus");
+  if(!endpoint){
+    status.textContent="No Google Apps Script URL yet. Answers are still saved locally. Use Export as fallback.";
+    return;
+  }
+  const all=collect();
+  const payload={
+    appVersion:APP_VERSION,
+    submittedAt:new Date().toISOString(),
+    studentName:all.studentName||"Bryan",
+    classDate:all.classDate||"",
+    classTitle:all.classTitle||"Fear, Fate, and Hidden Worlds",
+    section:section,
+    page:"Hidden Worlds Lab",
+    answers:sectionData(section),
+    fullAnswers: section==="full" || section==="checkpoint" ? all : undefined,
+    userAgent:navigator.userAgent
+  };
+  status.textContent="Sending...";
+  try{
+    await fetch(endpoint,{
+      method:"POST",
+      mode:"no-cors",
+      headers:{"Content-Type":"text/plain;charset=utf-8"},
+      body:JSON.stringify(payload)
+    });
+    const log=JSON.parse(localStorage.getItem(SUBMIT_KEY)||"[]");
+    log.push({time:new Date().toISOString(), section});
+    localStorage.setItem(SUBMIT_KEY, JSON.stringify(log.slice(-30)));
+    status.textContent="Sent attempt recorded. Check Clark’s Google Sheet.";
+  }catch(err){
+    status.textContent="Send failed. Nothing was erased. Use Copy export. Error: "+err.message;
+  }
+}
+function buildExport(){
+  const d=collect();
+  const lines=[];
+  lines.push("Bryan Class Log - Hidden Worlds Lab v5.1.1");
+  lines.push("Student: "+(d.studentName||"Bryan"));
+  lines.push("Date: "+(d.classDate||""));
+  lines.push("Class: "+(d.classTitle||""));
+  lines.push("");
+  for(const [section,keys] of Object.entries(sectionKeys)){
+    lines.push("## "+section.toUpperCase());
+    keys.forEach(k=>{ if(k!=="studentName" && k!=="classDate" && k!=="classTitle") lines.push(k+": "+(d[k]||"")); });
+    lines.push("");
+  }
+  document.getElementById("exportText").textContent=lines.join("\n");
+  return lines.join("\n");
+}
+async function copyExport(){
+  const text=buildExport();
+  try{ await navigator.clipboard.writeText(text); document.getElementById("status-full").textContent="Copied export text."; }
+  catch(e){ document.getElementById("status-full").textContent="Copy failed. Select the export text manually."; }
+}
+function clearAll(){
+  if(confirm("Clear answers from this device? This cannot be undone.")){
+    localStorage.removeItem(STORE_KEY);
+    location.reload();
+  }
+}
+function toggleTeacher(){
+  const on = !document.querySelector("[data-teacher]").classList.contains("on");
+  document.querySelectorAll("[data-teacher]").forEach(el=>el.classList.toggle("on",on));
+}
+function voiceTo(key){
+  const el=document.querySelector(`[data-key="${key}"]`);
+  const SR=window.SpeechRecognition || window.webkitSpeechRecognition;
+  if(!SR){ alert("Voice input is not supported here. Use your keyboard microphone instead."); return; }
+  const rec=new SR(); rec.lang="en-US"; rec.interimResults=false; rec.maxAlternatives=1;
+  rec.onresult=e=>{ el.value = (el.value ? el.value+"\n" : "") + e.results[0][0].transcript; save(); };
+  rec.onerror=e=>alert("Voice input error: "+e.error);
+  rec.start();
+}
+function drawRelic(){
+  const c=document.getElementById("relicCanvas"), ctx=c.getContext("2d"), d=collect();
+  ctx.imageSmoothingEnabled=false;
+  ctx.clearRect(0,0,96,96);
+  const lens=d.storyLens||"", mood=d.mood||"", fear=d.fearType||"", role=d.monsterRole||"";
+  let palette=["#0b1020","#fb7185","#a78bfa","#60a5fa","#fbbf24","#86efac"];
+  if(lens.includes("JJK")) palette=["#070a11","#7f1d1d","#4c1d95","#c084fc","#f472b6","#e5e7eb"];
+  if(lens.includes("MHA")) palette=["#08111f","#2563eb","#dc2626","#fbbf24","#22c55e","#f8fafc"];
+  if(lens.includes("Fate")) palette=["#070817","#4f46e5","#d1d5db","#fbbf24","#9333ea","#f8fafc"];
+  if(lens.includes("One Piece")) palette=["#06121f","#0ea5e9","#f97316","#facc15","#22c55e","#f8fafc"];
+  if(lens.includes("Black Clover")) palette=["#07110d","#16a34a","#111827","#f8fafc","#a3e635","#22c55e"];
+  if(lens.includes("Viking")) palette=["#07110d","#0f766e","#64748b","#eab308","#f8fafc","#78350f"];
+  if(lens.includes("Horror")) palette=["#050505","#991b1b","#111827","#e5e7eb","#6b7280","#7c2d12"];
+  if(lens.includes("Alice")) palette=["#0f1020","#38bdf8","#f472b6","#f8fafc","#111827","#facc15"];
+  ctx.fillStyle=palette[0]; ctx.fillRect(0,0,96,96);
+  // border
+  ctx.fillStyle=palette[3]; ctx.fillRect(8,8,80,4); ctx.fillRect(8,84,80,4); ctx.fillRect(8,8,4,80); ctx.fillRect(84,8,4,80);
+  ctx.fillStyle=palette[2]; ctx.fillRect(14,14,68,4); ctx.fillRect(14,78,68,4); ctx.fillRect(14,14,4,68); ctx.fillRect(78,14,4,68);
+  // central shape based on role
+  ctx.fillStyle=palette[1];
+  if(role.includes("Hero")){
+    ctx.fillRect(44,22,8,36); ctx.fillRect(32,42,32,8); ctx.fillRect(38,58,20,8);
+  } else if(role.includes("Villain")){
+    ctx.fillRect(28,28,12,12); ctx.fillRect(56,28,12,12); ctx.fillRect(34,52,28,10); ctx.fillRect(42,38,12,18);
+  } else if(role.includes("World")){
+    ctx.beginPath(); ctx.arc(48,48,22,0,Math.PI*2); ctx.fill();
+  } else {
+    ctx.fillRect(34,26,28,36); ctx.fillRect(28,38,40,18);
+  }
+  // fear patterns
+  ctx.fillStyle=palette[4];
+  if(fear.includes("Mystery") || mood.includes("Mysterious")){
+    for(let i=0;i<5;i++) ctx.fillRect(24+i*10,66-i*3,6,6);
+  } else if(fear.includes("Body") || mood.includes("wrong")){
+    for(let i=0;i<6;i++) ctx.fillRect(20+i*9,24+(i%2)*28,4,20);
+  } else if(fear.includes("Fate")){
+    ctx.fillRect(24,46,48,4); ctx.fillRect(46,24,4,48);
+  } else {
+    for(let i=0;i<8;i++) ctx.fillRect(18+i*8,70,4,4);
+  }
+  // completion aura
+  const filledFinal = ["pitchTitle","mainCharacter","worldRule","mainConflict","episodeTwoHook"].filter(k=>(d[k]||"").trim()).length;
+  ctx.fillStyle=palette[5];
+  for(let i=0;i<filledFinal;i++){ ctx.fillRect(20+i*12,18,6,6); }
+}
+function downloadRelic(){
+  drawRelic();
+  const a=document.createElement("a");
+  a.download="bryan-hidden-worlds-relic.png";
+  a.href=document.getElementById("relicCanvas").toDataURL("image/png");
+  a.click();
+}
+if("serviceWorker" in navigator){ navigator.serviceWorker.register("./service-worker.js").catch(()=>{}); }
+load();
+</script>
+</body>
+</html>

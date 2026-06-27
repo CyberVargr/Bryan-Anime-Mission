@@ -1,0 +1,18 @@
+Bryan Hidden Worlds Lab v5.1 - Update Instructions
+
+This version adds Bryan's additional interests:
+- Fate series: ideals, destiny, heroic spirits
+- One Piece: dreams, freedom, crew, long journey
+- Black Clover: no talent, willpower, rivals, training
+
+Upload/replace these four files in the existing GitHub repo root:
+- index.html
+- manifest.json
+- service-worker.js
+- icon.svg
+
+Live test URL:
+https://cybervargr.github.io/Bryan-Anime-Mission/?v=5.1
+
+Google Sheets backend:
+The Apps Script backend is unchanged from v5. Use google_apps_script_backend.gs if you have not set it up yet.

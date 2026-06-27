@@ -1,1 +1,15 @@
-{"name":"Brian Anime Mission Lab v4","short_name":"Anime Mission v4","start_url":"./index.html","display":"standalone","background_color":"#070a11","theme_color":"#0b1020","description":"Songshan field study with food rating, optional Alice, and pixel relic.","icons":[{"src":"icon.svg","sizes":"512x512","type":"image/svg+xml"}]}
+{
+  "name": "Bryan Hidden Worlds Lab v5.1",
+  "short_name": "Hidden v5.1",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#07070b",
+  "theme_color": "#09090f",
+  "icons": [
+    {
+      "src": "icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}
