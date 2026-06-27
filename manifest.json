@@ -1,15 +1,9 @@
 {
-  "name": "Bryan Hidden Worlds Lab v5.1",
-  "short_name": "Hidden v5.1",
+  "name": "Bryan Hidden Worlds Lab v5.2",
+  "short_name": "Hidden v5.2",
   "start_url": "./index.html",
   "display": "standalone",
   "background_color": "#07070b",
   "theme_color": "#09090f",
-  "icons": [
-    {
-      "src": "icon.svg",
-      "sizes": "any",
-      "type": "image/svg+xml"
-    }
-  ]
+  "icons": [{ "src": "icon.svg", "sizes": "any", "type": "image/svg+xml" }]
 }
